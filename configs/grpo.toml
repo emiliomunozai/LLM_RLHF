@@ -1,0 +1,12 @@
+[grpo]
+group_size = 4                  # G responses sampled per prompt
+beta = 0.04                     # KL coefficient (much smaller than DPO's β)
+clip_epsilon = 0.2
+learning_rate = 5e-7
+num_iterations = 10
+num_prompts_per_iter = 4
+max_new_tokens = 64
+temperature = 1.0
+top_p = 1.0
+max_grad_norm = 1.0
+output_dir = "checkpoints/grpo"

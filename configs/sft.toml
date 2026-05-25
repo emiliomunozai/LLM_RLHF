@@ -1,0 +1,20 @@
+[sft]
+dataset_name = "databricks/databricks-dolly-15k"
+max_seq_length = 512
+
+# LoRA — only ~0.5% of weights trained
+lora_r = 16
+lora_alpha = 32
+lora_dropout = 0.05
+lora_target_modules = ["q_proj", "v_proj"]
+
+# Optimisation
+output_dir = "checkpoints/sft"
+num_epochs = 1
+batch_size = 8
+grad_accum_steps = 4
+learning_rate = 2e-5
+warmup_ratio = 0.1
+weight_decay = 0.01
+logging_steps = 10
+save_steps = 200

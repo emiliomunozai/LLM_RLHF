@@ -1,0 +1,10 @@
+# Shared defaults referenced by every stage. Override per-stage in the
+# stage-specific TOML files.
+
+[model]
+model_name = "facebook/opt-350m"
+device = "cuda"               # falls back to cpu if no GPU
+
+[paths]
+checkpoint_root = "checkpoints"
+data_root = "data"

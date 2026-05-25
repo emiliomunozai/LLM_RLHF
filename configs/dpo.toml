@@ -1,0 +1,8 @@
+[dpo]
+beta = 0.1                      # higher = more aggressive preference optimisation
+learning_rate = 5e-7
+num_epochs = 3
+batch_size = 4
+max_seq_length = 512
+max_grad_norm = 1.0
+output_dir = "checkpoints/dpo"
