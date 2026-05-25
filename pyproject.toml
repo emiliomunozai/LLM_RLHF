@@ -6,8 +6,7 @@ requires-python = ">=3.11"
 readme = "README.md"
 
 dependencies = [
-    # Core deep learning
-    "torch>=2.2",
+    # Core numerics (torch is in cpu/gpu groups below)
     "numpy>=1.26",
 
     # Hugging Face stack
@@ -36,6 +35,12 @@ dev = [
     "ipykernel>=6.0",
     "ruff>=0.6",
 ]
+cpu = [
+    "torch>=2.2",
+]
+gpu = [
+    "torch>=2.2",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -50,3 +55,24 @@ pythonpath = ["src"]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu128", group = "gpu" },
+  { index = "pytorch-cpu", group = "cpu" },
+]
+
+[tool.uv]
+conflicts = [
+  [{ group = "cpu" }, { group = "gpu" }],
+]

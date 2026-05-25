@@ -1,0 +1,53 @@
+
+======================================================================
+  STAGE: PPO
+======================================================================
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading facebook/opt-350m on cuda...
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 55154.54it/s]
+Loaded 331.2M parameters.
+Loaded adapter from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\sft\adapter (trainable=True)
+Loading facebook/opt-350m on cuda...
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 32746.90it/s]
+Loaded 331.2M parameters.
+Loaded adapter from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\sft\adapter (trainable=False)
+Reward model: 332.8M parameters
+Loaded reward model from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\reward
+PPO iterations:   0%|          | 0/10 [00:00<?, ?it/s][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  10%|█         | 1/10 [00:02<00:24,  2.73s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  20%|██        | 2/10 [00:05<00:19,  2.48s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  30%|███       | 3/10 [00:06<00:15,  2.23s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  40%|████      | 4/10 [00:08<00:12,  2.10s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  50%|█████     | 5/10 [00:10<00:10,  2.07s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  60%|██████    | 6/10 [00:13<00:08,  2.19s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  70%|███████   | 7/10 [00:15<00:06,  2.28s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  80%|████████  | 8/10 [00:17<00:04,  2.25s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations:  90%|█████████ | 9/10 [00:19<00:02,  2.16s/it][transformers] A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+PPO iterations: 100%|██████████| 10/10 [00:21<00:00,  2.12s/it]PPO iterations: 100%|██████████| 10/10 [00:21<00:00,  2.19s/it]
+[iter 0] policy_loss=0.0424, value_loss=0.6566, entropy=2.5408, clip_frac=0.4131, approx_kl=0.0699, mean_reward=-0.9520, mean_kl_per_token=0.0000
+[iter 1] policy_loss=0.0401, value_loss=0.8986, entropy=2.4575, clip_frac=0.3223, approx_kl=0.0621, mean_reward=0.6926, mean_kl_per_token=0.0000
+[iter 2] policy_loss=0.0410, value_loss=0.7006, entropy=2.6949, clip_frac=0.3877, approx_kl=0.0958, mean_reward=0.3925, mean_kl_per_token=0.0000
+[iter 3] policy_loss=0.0358, value_loss=0.5411, entropy=2.6459, clip_frac=0.3994, approx_kl=0.0919, mean_reward=0.6696, mean_kl_per_token=0.0000
+[iter 4] policy_loss=0.0363, value_loss=0.9252, entropy=2.8713, clip_frac=0.3750, approx_kl=0.0707, mean_reward=1.3124, mean_kl_per_token=0.0000
+[iter 5] policy_loss=0.0087, value_loss=0.8143, entropy=2.4597, clip_frac=0.3466, approx_kl=0.0541, mean_reward=0.2077, mean_kl_per_token=0.0001
+[iter 6] policy_loss=0.0361, value_loss=0.8022, entropy=3.1025, clip_frac=0.4460, approx_kl=0.0887, mean_reward=0.1427, mean_kl_per_token=0.0002
+[iter 7] policy_loss=0.0528, value_loss=0.8544, entropy=3.1185, clip_frac=0.4189, approx_kl=0.0784, mean_reward=0.6696, mean_kl_per_token=0.0001
+[iter 8] policy_loss=0.0452, value_loss=0.5503, entropy=2.9761, clip_frac=0.3955, approx_kl=0.0643, mean_reward=0.0961, mean_kl_per_token=0.0001
+[iter 9] policy_loss=0.0250, value_loss=0.5871, entropy=2.9703, clip_frac=0.4023, approx_kl=0.0614, mean_reward=-0.2401, mean_kl_per_token=0.0001
+PPO training took 21.9s
+Saved PPO model to C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\ppo
+
+--- generations [ppo] ---
+PROMPT:     Explain quantum computing to a 10-year-old.
+COMPLETION:                                                                                                                         
+
+PROMPT:     Why is the sky blue?
+COMPLETION:  The sky is blue because the light that is emitted by the sun is reflected by the blue part of the sky. This blue light is absorbed by the water and the blue part of the sky is reflected by the white part of the sky.  The white part of the sky is reflected by the white part of the sky.  The blue part of the sky is reflected by the white part of the sky.  The blue part of the sky is reflected by the white part of the sky.  The white part of the sky is reflected by the white part of the sky.  The blue part
+
+PROMPT:     Write a haiku about machine learning.
+COMPLETION:                                                                                                                         
+
+
+=== pipeline complete ===
+Outputs: C:\Users\EMILIO\Desktop\dev\LLM_RLHF\pipeline_outputs.json

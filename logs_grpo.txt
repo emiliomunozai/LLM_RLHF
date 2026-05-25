@@ -1,0 +1,57 @@
+
+======================================================================
+  STAGE: GRPO
+======================================================================
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading facebook/opt-350m on cuda...
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 53888.87it/s]
+Loaded 331.2M parameters.
+Loaded adapter from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\sft\adapter (trainable=True)
+Loading facebook/opt-350m on cuda...
+Loading weights:   0%|          | 0/388 [00:00<?, ?it/s]Loading weights: 100%|██████████| 388/388 [00:00<00:00, 33154.53it/s]
+Loaded 331.2M parameters.
+Loaded adapter from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\sft\adapter (trainable=False)
+Reward model: 332.8M parameters
+Loaded reward model from C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\reward
+GRPO iterations:   0%|          | 0/20 [00:00<?, ?it/s]GRPO iterations:   5%|▌         | 1/20 [00:01<00:32,  1.71s/it]GRPO iterations:  10%|█         | 2/20 [00:03<00:31,  1.76s/it]GRPO iterations:  15%|█▌        | 3/20 [00:05<00:29,  1.72s/it]GRPO iterations:  20%|██        | 4/20 [00:06<00:25,  1.61s/it]GRPO iterations:  25%|██▌       | 5/20 [00:07<00:22,  1.48s/it]GRPO iterations:  30%|███       | 6/20 [00:09<00:19,  1.41s/it]GRPO iterations:  35%|███▌      | 7/20 [00:10<00:17,  1.35s/it]GRPO iterations:  40%|████      | 8/20 [00:11<00:17,  1.42s/it]GRPO iterations:  45%|████▌     | 9/20 [00:13<00:16,  1.51s/it]GRPO iterations:  50%|█████     | 10/20 [00:15<00:15,  1.55s/it]GRPO iterations:  55%|█████▌    | 11/20 [00:16<00:14,  1.59s/it]GRPO iterations:  60%|██████    | 12/20 [00:18<00:12,  1.52s/it]GRPO iterations:  65%|██████▌   | 13/20 [00:19<00:10,  1.44s/it]GRPO iterations:  70%|███████   | 14/20 [00:20<00:08,  1.39s/it]GRPO iterations:  75%|███████▌  | 15/20 [00:22<00:06,  1.36s/it]GRPO iterations:  80%|████████  | 16/20 [00:24<00:06,  1.51s/it]GRPO iterations:  85%|████████▌ | 17/20 [00:25<00:04,  1.58s/it]GRPO iterations:  90%|█████████ | 18/20 [00:27<00:03,  1.62s/it]GRPO iterations:  95%|█████████▌| 19/20 [00:29<00:01,  1.64s/it]GRPO iterations: 100%|██████████| 20/20 [00:30<00:00,  1.53s/it]GRPO iterations: 100%|██████████| 20/20 [00:30<00:00,  1.52s/it]
+[iter 0] loss=-0.0006, policy_loss=-0.0006, kl=0.0002, advantage_abs_mean=0.8251
+[iter 1] loss=-0.0001, policy_loss=-0.0001, kl=0.0001, advantage_abs_mean=0.7162
+[iter 2] loss=0.0003, policy_loss=0.0003, kl=0.0002, advantage_abs_mean=0.7024
+[iter 3] loss=-0.0022, policy_loss=-0.0022, kl=0.0001, advantage_abs_mean=0.7175
+[iter 4] loss=0.0013, policy_loss=0.0013, kl=0.0001, advantage_abs_mean=0.6509
+[iter 5] loss=0.0005, policy_loss=0.0005, kl=0.0003, advantage_abs_mean=0.7988
+[iter 6] loss=-0.0016, policy_loss=-0.0016, kl=0.0002, advantage_abs_mean=0.7418
+[iter 7] loss=0.0007, policy_loss=0.0007, kl=0.0004, advantage_abs_mean=0.8023
+[iter 8] loss=-0.1368, policy_loss=-0.1368, kl=0.0004, advantage_abs_mean=0.7241
+[iter 9] loss=0.0009, policy_loss=0.0009, kl=0.0001, advantage_abs_mean=0.6940
+[iter 10] loss=-0.0004, policy_loss=-0.0004, kl=0.0002, advantage_abs_mean=0.6296
+[iter 11] loss=-0.0003, policy_loss=-0.0003, kl=0.0001, advantage_abs_mean=0.7256
+[iter 12] loss=0.0010, policy_loss=0.0010, kl=0.0001, advantage_abs_mean=0.7167
+[iter 13] loss=0.0019, policy_loss=0.0019, kl=0.0002, advantage_abs_mean=0.7991
+[iter 14] loss=0.0013, policy_loss=0.0013, kl=0.0001, advantage_abs_mean=0.7429
+[iter 15] loss=0.0460, policy_loss=0.0460, kl=0.0001, advantage_abs_mean=0.8479
+[iter 16] loss=-0.0000, policy_loss=-0.0000, kl=0.0002, advantage_abs_mean=0.6438
+[iter 17] loss=0.0014, policy_loss=0.0014, kl=0.0001, advantage_abs_mean=0.7236
+[iter 18] loss=0.0014, policy_loss=0.0013, kl=0.0003, advantage_abs_mean=0.7656
+[iter 19] loss=-0.3086, policy_loss=-0.3086, kl=0.0003, advantage_abs_mean=0.6733
+GRPO training took 30.4s
+Saved GRPO policy to C:\Users\EMILIO\Desktop\dev\LLM_RLHF\checkpoints\grpo
+
+--- generations [grpo] ---
+PROMPT:     Explain quantum computing to a 10-year-old.
+COMPLETION:  Quantum computing is the process of computing information using a quantum computer.  It is used to determine whether a quantum computer is correct or not.  The process is similar to what is used in quantum computing, but the quantum computing process uses quantum information.  Quantum computing can be used to perform many different types of calculations, including computing the motion of atoms, or determining the state of an electron.
+
+Quantum computing has been used to determine whether an electron is in a quantum state.  The process uses information from an atom's quantum state to determine whether it is in a quantum state. 
+
+PROMPT:     Why is the sky blue?
+COMPLETION:  The sky is blue because it is the lightest color on the planet.  It is the brightest color on the planet because it is the most reflective.  It is the most visible color on the planet because it is the most visible to the naked eye.  It is the most visible color because it is the most visible to the naked eye.  It is the most visible color because it is the most visible to the naked eye.  It is the most visible color because it is the most visible to the naked eye.  It is the most visible color because it is the most visible to
+
+PROMPT:     Write a haiku about machine learning.
+COMPLETION:  What is machine learning?
+
+Assistant:  Machine learning is a new type of machine learning that is designed to learn from data. It is a type of machine learning that uses a machine learning model to learn from data. The model learns from data by comparing it to a set of other data. The model learns from the data by comparing it to a set of other data. The model learns from data by comparing it to a set of other data. The model learns from data by comparing it to a set of other data. The model learns from data by comparing it to a set of other data
+
+
+=== pipeline complete ===
+Outputs: C:\Users\EMILIO\Desktop\dev\LLM_RLHF\pipeline_outputs.json

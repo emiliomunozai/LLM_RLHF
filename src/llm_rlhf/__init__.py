@@ -14,6 +14,7 @@ The package mirrors the conceptual stages of RLHF so each file maps to one idea:
 Read the modules in the order above; each one builds on the previous.
 """
 
+from llm_rlhf.eval import CANONICAL_PROMPT, EVAL_PROMPTS
 from llm_rlhf.model import PretrainedLLM
 
-__all__ = ["PretrainedLLM"]
+__all__ = ["PretrainedLLM", "CANONICAL_PROMPT", "EVAL_PROMPTS"]

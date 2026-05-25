@@ -82,7 +82,11 @@ class RewardModel(nn.Module):
         if hasattr(self.backbone, "lm_head"):
             self.backbone.lm_head = nn.Identity()
 
-        hidden_size = self.backbone.config.hidden_size
+        # OPT-350m projects the final hidden state from `hidden_size=1024` down
+        # to `word_embed_proj_dim=512` before the LM head, so `config.hidden_size`
+        # is *not* the actual output dim of `hidden_states[-1]`. Determine the
+        # real dim with a dummy forward pass.
+        hidden_size = self._infer_hidden_dim()
         self.reward_head = nn.Linear(hidden_size, 1)
         nn.init.normal_(self.reward_head.weight, std=0.01)
         nn.init.zeros_(self.reward_head.bias)
@@ -90,6 +94,15 @@ class RewardModel(nn.Module):
         self.to(self.device)
         n_params = sum(p.numel() for p in self.parameters()) / 1e6
         print(f"Reward model: {n_params:.1f}M parameters")
+
+    @torch.no_grad()
+    def _infer_hidden_dim(self) -> int:
+        dummy_ids = torch.zeros(1, 1, dtype=torch.long, device=self.device)
+        dummy_mask = torch.ones(1, 1, dtype=torch.long, device=self.device)
+        out = self.backbone(
+            input_ids=dummy_ids, attention_mask=dummy_mask, output_hidden_states=True
+        )
+        return out.hidden_states[-1].size(-1)
 
     def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
         outputs = self.backbone(
@@ -102,6 +115,9 @@ class RewardModel(nn.Module):
         last_idx = attention_mask.sum(dim=1) - 1
         batch_idx = torch.arange(input_ids.size(0), device=input_ids.device)
         pooled = last_hidden[batch_idx, last_idx]
+        # Backbone runs in fp16 on GPU but the reward head is fp32 — cast
+        # the pooled hidden state to match the head's dtype.
+        pooled = pooled.to(self.reward_head.weight.dtype)
         return self.reward_head(pooled).squeeze(-1)
 
 

@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+
+# Virtual environments
+venv/
+env/
+.venv/
+.venv*/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs and runtime files
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.*
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Machine learning / data
+*.h5
+*.ckpt
+*.ckpt.*
+*.pth
+*.pt
+*.model
+*.bin
+*.npz
+*.npy
+*.tensorboard
+runs/
+checkpoints/
+logs/
+
+# Project-specific
+data/
+outputs/
+cache/
+.tmp/
+
+# Ignore local git settings
+.gitconfig
+.git-credentials
+.claude
+.venv
+tutorial.ipynb
+checkpoints/

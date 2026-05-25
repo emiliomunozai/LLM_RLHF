@@ -40,4 +40,7 @@ class PPOModel(nn.Module):
             output_hidden_states=True,
         )
         last_hidden = outputs.hidden_states[-1]          # [B, L, H]
+        # Backbone runs in fp16 on GPU but the reward head is fp32 — cast
+        # the hidden states to match the head's dtype (same fix as in reward.py).
+        last_hidden = last_hidden.to(self.critic.reward_head.weight.dtype)
         return self.critic.reward_head(last_hidden).squeeze(-1)  # [B, L]
