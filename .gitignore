@@ -82,3 +82,4 @@ cache/
 .venv
 tutorial.ipynb
 checkpoints/
+CLAUDE.MD
