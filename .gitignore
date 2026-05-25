@@ -78,7 +78,7 @@ cache/
 # Ignore local git settings
 .gitconfig
 .git-credentials
-.claude
+.claude/
 .venv
 tutorial.ipynb
 checkpoints/
