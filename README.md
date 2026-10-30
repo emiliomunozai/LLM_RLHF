@@ -7,7 +7,16 @@ after each one, how many grade-school math problems (GSM8K) it solves:
 2. **Imitation**: copying solutions written by people.
 3. **Reinforcement learning (GRPO)**: learning from its own attempts, rewarded when correct.
 
-## Run
+## Run in Colab
+
+| Notebook | |
+|---|---|
+| Main course | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emiliomunozai/LLM_RLHF/blob/main/notebooks/reasoning_from_scratch.ipynb) |
+| Optional: policy gradients in 2D | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emiliomunozai/LLM_RLHF/blob/main/notebooks/optional_policy_gradient_intuition.ipynb) |
+
+Choose a GPU runtime (T4). The notebook installs what it needs and downloads the trained models from this repository.
+
+## Run locally
 
 ```bash
 uv sync --group gpu
