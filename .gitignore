@@ -4,8 +4,8 @@ __pycache__/
 .ipynb_checkpoints/
 .ruff_cache/
 
-# Quick test runs of the notebook (QUICK_RUN = True)
-notebooks/outputs_quick/
+# Students' experiments and quick test runs (the reference results in notebooks/outputs/ are kept)
+notebooks/outputs_*/
 
 # Local tools
 .claude/
